@@ -32,7 +32,7 @@ class Paciente(db.Model):
     
 class Consultorio(db.Model):
     
-    __tablename__ ="consultorios"
+    __tablename__ = "consultorios"
     id = db.Column(db.Integer, primary_key = True)
     numero = db.Column(db.Integer)
     
