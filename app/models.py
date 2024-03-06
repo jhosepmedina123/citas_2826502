@@ -28,11 +28,15 @@ class Paciente(db.Model):
     altura = db.Column(db.Integer)
     tipo_sangre =  db.Column(db.String(2))
     
+    citas = db.relationship("Cita" , backref = "paciente")
+    
 class Consultorio(db.Model):
     
     __tablename__ ="consultorios"
     id = db.Column(db.Integer, primary_key = True)
     numero = db.Column(db.Integer)
+    
+    citas = db.relationship("Cita" , backref = "consultorio")
     
 class Cita(db.Model):
     
@@ -42,3 +46,5 @@ class Cita(db.Model):
     paciente_id = db.Column (db.Integer , db.ForeignKey("pacientes.id"))
     medico_id = db.Column (db.Integer , db.ForeignKey("medicos.id"))
     consultorio_id = db.Column (db.Integer , db.ForeignKey("consultorios.id"))
+    valor_cita = db.Column(db.Integer)
+    
