@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medico form</title>
+</head>
+<body>
+    <h1>Nuevo Medico</h1>
+    <form method="post" action="">
+        <p> Nombre: <input type="text" name="nombre" /> </p>
+        <p> Apellido: <input type="text" name="apellidos" /> </p>
+        <p> Tipo identificacion: 
+            <select name="t1" id="">
+                <option>TI</option>
+                <option>CC</option>
+            </select>
+        </p>
+        <p>Numero Identificacion:
+            <input type="text" name="n1" />
+        </p>
+        <p>Registro Medico:
+            <input type="text" name="rm" />
+        </p>
+        <p>
+            Especialidad: 
+            <select name="es">
+                {% for especialidad in especialidades %}
+                    <option>
+                        {{ especialidad }}
+                    </option>
+                {% endfor%}
+            </select>
+        </p>
+        <p>
+            <button type="submit">
+                Guardar
+            </button>
+        </p>
+    </form>
+</body>
+</html>
