@@ -1,7 +1,6 @@
 from flask import Flask 
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-##importar el config
 from .config import Config
 
 ##crear objeto de aplicacion

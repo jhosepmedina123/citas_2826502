@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>paciente update</title>
+</head>
+<body>
+    <h1>Actualizar datos Paciente<h1>
+    <form method="post" action="/pacientes/update/{{paciente_update.id}}" >
+        <p> 
+            Nombre: <input type="text" name="nombre" value="{{ paciente_update.nombre }}"> 
+        </p>
+        <p> 
+            Apellido: <input type="text" name="apellidos" value="{{ paciente_update.apellidos }}">
+        </p>
+        <p> Tipo identificacion: 
+            <select name="t1" id="">
+                <option
+                    {%if paciente_update.tipo_identificacion == "TI" %}
+                        selected
+                    {% endif %}
+                >TI</option>
+                <option
+                {%if paciente_update.tipo_identificacion == "CC" %}
+                    selected
+                {% endif %}
+                >CC</option>
+            </select>
+        </p>
+        <p>Numero Identificacion:
+            <input type="text" name="n1" value="{{ paciente_update.numero_identificacion }}"/>
+        </p>
+        <p>
+            <button type="submit">
+                Actualizar
+            </button>
+        </p>
+    </form>
+</body>
+</html>
